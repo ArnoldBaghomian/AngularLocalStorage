@@ -12,6 +12,14 @@ app.controller('mainCtrl', function($scope, $localStorage){
     $scope.orderField = key;
   }
   
+  $scope.switchUp = function(potion){
+      console.log(potion);
+      $scope.newPotion = potion;
+  }
+
+  $scope.editHandler = function(potion){
+        $scope.newPotion = {};
+  }
  
   if(!$localStorage.localArray) {
     console.log('inside local Array');
