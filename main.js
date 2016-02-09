@@ -8,32 +8,29 @@ app.controller('mainCtrl', function($scope, $localStorage){
   // Array of contacts objects 
   // {name: arnold, phonenumber:777-7777}
   
-   $scope.ordering = function(key){
+  $scope.ordering = function(key){
     $scope.orderField = key;
   }
   
   $scope.switchUp = function(potion){
-      console.log(potion);
-      $scope.newPotion = potion;
+    console.log(potion);
+    $scope.newPotion = potion;
   }
 
   $scope.editHandler = function(potion){
         $scope.newPotion = {}; // binding
-  }
- 
-  if(!$localStorage.localArray) {
-    console.log('inside local Array');
-    $localStorage.localArray = [];
-  } 
+      }
 
-  $scope.potions = $localStorage.localArray || [];
+      if(!$localStorage.localArray) {
+        console.log('inside local Array');
+        $localStorage.localArray = [];
+      } 
 
-  $scope.keys = Object.keys;
+      $scope.potions = $localStorage.localArray || [];
 
+      $scope.keys = Object.keys;
 
-
-
-  $scope.addPotion = function(){
+      $scope.addPotion = function(){
     //$scope.potions.push($scope.newPotion);
 
     var tempArray = $localStorage.localArray;
@@ -43,10 +40,6 @@ app.controller('mainCtrl', function($scope, $localStorage){
     $scope.potions = tempArray; 
     $scope.newPotion = {};
   };
-
-
-
-  //$scope.addPotion(); 
 
   $scope.removeRow = function(potion){
     // $('#myModal').modal();
