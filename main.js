@@ -18,7 +18,7 @@ app.controller('mainCtrl', function($scope, $localStorage){
   }
 
   $scope.editHandler = function(potion){
-        $scope.newPotion = {};
+        $scope.newPotion = {}; // binding
   }
  
   if(!$localStorage.localArray) {
